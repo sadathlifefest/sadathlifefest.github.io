@@ -1,87 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs - SLF'25</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* BASIC CSS FOR THE DROPDOWN (You should put this in your style.css) */
-        .select-container {
-            margin: 20px auto;
-            max-width: 400px; /* Optional: for better mobile view */
-        }
-        select {
-            width: 100%;
-            padding: 10px;
-            font-size: 1em;
-            border: 2px solid #007bff; /* Example primary color */
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Font Stack: Michroma repeated is redundant but kept as per original */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Michroma, Michroma, Michroma, Michroma;
+}
 
-        <header>
-            <div class="logo">SLF'25</div>
-        </header>
-
-        <main>
-            <h1>Results</h1>
-            
-            <div class="select-container">
-                <select id="event-selector" onchange="goToPage(this)">
-                    <option value="">-- Select an Event Result --</option>
-                    <option value="THARTHEEL.html">THARTHEEL</option>
-                    <option value="MADH-SONG.html">MADH SONG</option>
-                    <option value="MAPPILAPPATTU.html">MAPPILAPPATTU</option>
-                    <option value="HERANCIA.html">HERENCIA</option>
-                    <option value="QAWWALI.html">QAWWALI</option>
-                    <option value="ELOCUTION URDU.html">ELOCUTION URDU</option>
-                    <option value="QURAN-PREBHASHANAM.html">QURAN PREBHASHANAM</option>
-                    <option value="SEERA-PARAYANAM.html">SEERA PARAYANAM</option>
-                    <option value="CAMPUS-MELODY.html">CAMPUS MELODY</option>
-                    <option value="INTERNATIONAL-THADREES.html">INTERNATIONAL THADREES</option>
-                    <option value="PODCAST.html">PODCAST</option>
-                    <option value="WALK-AND-TALK.html">WALK AND TALK</option>
-                    <option value="KNOWLEDGE-OLYMPIAD.html">KNOWLEDGE OLYMPIAD</option>
-                    <option value="MASTER-TWEET.html">MASTER TWEET</option>
-                    <option value="NEWS-CASTING.html">NEWS CASTING</option>
-                    <option value="MAKTHABA- JENIUS.html">MAKTHABA JENIUS</option>
-                    <option value="THAHREER.html">THAHREER</option>
-                    <option value="ESSAY-MALAYALAM.html">ESSAY(ML)</option>
-                    <option value="TRANSLATION-ENGLISH.html">TRANSLATION (ENG)</option>
-                    <option value="PHOTOGRAPHY.html">PHOTOGRAPHY</option>
-                    <option value="E-POSTER.html">E POSTER MAKING</option>
-                    <option value="BOOK-REVIEW.html">BOOK REVIEW</option>
-                    <option value="HAIKU.html">HAIKU</option>
-                    <option value="MAS'ALA-SAMGRAHAM.html">MAS'ALA SAMGRAHAM</option>
-                    <option value="AHJIYATHUL-ALFIYA.html">AHJIYATHUL ALFIYA</option>
-                    <option value="SPOT-MAGAZINE.html">SPOT MAGAZINE</option>
-                    <option value="VIDEO-TRANSLATION.html">VIDEO TRANSLATION</option>
-                    <option value="MENTAL-EBILITY-TEST.html">MENTAL EBILITY TEST</option>
-                    <option value="AI- POEM-WRITING.html">AI POEM WRITING</option>
-                    <option value="COLLAGE.html">COLLAGE</option>
-                    <option value="SOCIAL-TWEET.html">SOCIAL TWEET</option>
-                </select>
-            </div>
-
-            <div class="cta-group">
-                <a href="index.html" class="btn secondary">← Back Home</a>
-            </div>
-        </main>
-    </div>
+body {
+    /* Background setup */
+    background-image: url('bgblur.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
-    <script>
-        function goToPage(selectElement) {
-            const url = selectElement.value;
-            if (url) {
-                // Navigate to the selected URL
-                window.location.href = url;
-            }
-        }
-    </script>
-</body>
-</html>
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Padding to prevent content being hidden by bottom navigation */
+    padding-bottom: 100px; 
+}
+
+header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif;
+    padding: 15px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.date-badge {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 7px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 70px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #e0eadd;
+    margin-bottom: 50px;
+}
+
+/* Button & CTA Group Styles */
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; 
+    max-width: 320px; 
+    display: inline-block;
+    text-align: center;
+}
+
+.btn.primary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn.secondary {
+    /* Glassmorphism look for the Back button */
+    background: rgba(255, 255, 255, 0.2); 
+    border: 8px solid rgba(25, 255, 150, 0.1); /* Green effect */
+    border-radius: 60px;
+    
+    /* Layout settings for cta-group elements (inherited from cta-group, but repeated here) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ------------------------------------------------------------------ */
+/* --- DROPDOWN (SELECT) STYLES (UPDATED FOR STABILITY & COLOR) --- */
+/* ------------------------------------------------------------------ */
+
+.select-container {
+    position: relative; /* CRITICAL for positioning the custom arrow */
+    margin: 20px auto;
+    max-width: 320px; 
+    width: 85%;
+}
+
+select {
+    /* Glassmorphism button style */
+    background: rgba(255, 255, 255, 0.2); 
+    border: 8px solid rgba(25, 255, 150, 0.1); 
+    border-radius: 50px; 
+    color: white; 
+    
+    /* Dimensions & Layout */
+    width: 100%; 
+    padding: 18px 25px; 
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    display: block; 
+    cursor: pointer; 
+    
+    /* Remove default browser styles/arrows */
+    background-image: none; 
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-appearance: none; 
+    -moz-appearance: none;    
+    appearance: none;         
+}
+
+/* Custom Arrow Icon (using pseudo-element for better cross-browser stability, especially Chrome) */
+.select-container::after {
+    content: '\25BE'; /* Unicode character for a downward arrow (▼) */
+    color: white;
+    font-size: 1.2rem;
+    pointer-events: none; 
+    
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%); 
+}
+
+/* Droplist Option Style (Updated to Dark Green) */
+select option {
+    background: #004d40; /* Dark Green color for option background */
+    color: white;
+}
+
+/* ------------------------------------------------------------------ */
+/* --- PROGRAM CARD STYLES --- */
+/* ------------------------------------------------------------------ */
+
+.program.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.program-card1 {
+    background: rgba(13, 43, 28, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    /* ... other styles (removed redundant ones for simplicity, kept core styling) ... */
+    width: 85%; 
+    max-width: 320px; 
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.program-card2 {
+    background: rgba(77, 10, 29, 0.8);
+    border: 1px solid rgba(24, 61, 61, 1);
+    border-radius: 15px;
+    /* ... core styling ... */
+    width: 85%; 
+    max-width: 320px; 
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.program-card3 {
+    background: rgba(0, 35, 68, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    /* ... core styling ... */
+    width: 85%; 
+    max-width: 320px; 
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* --- Navigation Bar Styles (Bottom Nav) --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 25px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.6; 
+    transition: 0.3s;
+}
+
+.nav-item.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+/* --- Footer Styles --- */
+footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+}
+
+.address-line {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    display: block;
+}
