@@ -5,60 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - SLF'25</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* BASIC CSS FOR THE DROPDOWN (You should put this in your style.css) */
+        .select-container {
+            margin: 20px auto;
+            max-width: 400px; /* Optional: for better mobile view */
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #007bff; /* Example primary color */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
 
-      <header>
+        <header>
             <div class="logo">SLF'25</div>
         </header>
 
-
         <main>
-    <h1>Results</h1>
+            <h1>Results</h1>
+            
+            <div class="select-container">
+                <select id="event-selector" onchange="goToPage(this)">
+                    <option value="">-- Select an Event Result --</option>
+                    <option value="തർത്തീൽ.html">തർത്തീൽ</option>
+                    <option value="മദ്ഹ്ഗാനം.html">മദ്ഹ്ഗാനം</option>
+                    <option value="മാപ്പിളപ്പാട്ട്.html">മാപ്പിളപ്പാട്ട്</option>
+                    <option value="ഹെറൻസിയ.html">ഹെറൻസിയ</option>
+                    <option value="ഖവാലി (G).html">ഖവാലി (G)</option>
+                    <option value="പ്രസംഗം-ഉറുദു.html">പ്രസംഗം ഉറുദു</option>
+                    <option value="ഖുർആൻ-പ്രഭാഷണം.html">ഖുർആൻ പ്രഭാഷണം</option>
+                    <option value="സീറാ-പാരായണം-G.html">സീറാ പാരായണം (G)</option>
+                    <option value="ക്യാമ്പസ്-മെലഡി-G.html">ക്യാമ്പസ് മെലഡി (G)</option>
+                    <option value="ഇന്റർനാഷ്‌നൾ-തദ്രീസ്.html">ഇന്റർനാഷ്‌നൾ തദ്രീസ്</option>
+                    <option value="പോഡ്‌കാസ്റ്റ്-മലയാളം-G.html">പോഡ്‌കാസ്റ്റ് - മലയാളം (G)</option>
+                    <option value="WALK-AND-TALK-ഇംഗ്ലീഷ്.html">WALK AND TALK - ഇംഗ്ലീഷ്</option>
+                    <option value="നോളേജ്-ഒളിമ്പ്യാട്.html">നോളേജ് ഒളിമ്പ്യാട്</option>
+                    <option value="മാസ്റ്റർ-ട്വീറ്റ്.html">മാസ്റ്റർ ട്വീറ്റ്</option>
+                    <option value="ന്യൂസ്-കാസ്റ്റിഗ്.html">ന്യൂസ് കാസ്റ്റിഗ്</option>
+                    <option value="മക്തബ-ജീനിയസ്.html">മക്തബ ജീനിയസ്</option>
+                    <option value="തഹ്-രീർ.html">തഹ് രീർ</option>
+                    <option value="പ്രബന്ധം-മലയാളം.html">പ്രബന്ധം (മലയാളം)</option>
+                    <option value="ട്രാൻസ്ലേഷൻ-ഇംഗ്ലീഷ്.html">ട്രാൻസ്ലേഷൻ (ഇംഗ്ലീഷ്)</option>
+                    <option value="ഫോട്ടോഗ്രഫി.html">ഫോട്ടോഗ്രഫി</option>
+                    <option value="ഇ-പോസ്റ്റർ-മേക്കിങ്.html">ഇ പോസ്റ്റർ മേക്കിങ്</option>
+                    <option value="ബുക്ക്-റിവ്യൂ.html">ബുക്ക് റിവ്യൂ</option>
+                    <option value="ഹൈക്കു.html">ഹൈക്കു</option>
+                    <option value="മസ്അല-സംഗ്രഹം.html">മസ്അല സംഗ്രഹം</option>
+                    <option value="അഹ്ജിയതുൽ-അൽഫിയ.html">അഹ്ജിയതുൽ അൽഫിയ</option>
+                    <option value="സ്പോട്ട്-മാഗസിൻ-G.html">സ്പോട്ട് മാഗസിൻ (G)</option>
+                    <option value="വീഡിയോ-ട്രാൻസ്ലേഷൻ.html">വീഡിയോ ട്രാൻസ്ലേഷൻ</option>
+                    <option value="മെന്റൽ-എബിലിറ്റി-ടെസ്റ്റ്.html">മെന്റൽ എബിലിറ്റി ടെസ്റ്റ്</option>
+                    <option value="AI-കവിതാ-രചന.html">AI കവിതാ രചന</option>
+                    <option value="കൊളാഷ്-G.html">കൊളാഷ് (G)</option>
+                    <option value="സോഷ്യൽ-ട്വീറ്റ്.html">സോഷ്യൽ ട്വീറ്റ്</option>
+                </select>
+            </div>
+
+            <div class="cta-group">
+                <a href="index.html" class="btn secondary">← Back Home</a>
+            </div>
         </main>
-
-                <div class="cta-group">
-    <a href="തർത്തീൽ.html" class="btn primary">തർത്തീൽ ➔</a>
-<a href="മദ്ഹ്ഗാനം.html" class="btn primary">മദ്ഹ്ഗാനം ➔</a>
-<a href="മാപ്പിളപ്പാട്ട്.html" class="btn primary">മാപ്പിളപ്പാട്ട് ➔</a>
-<a href="ഹെറൻസിയ.html" class="btn primary">ഹെറൻസിയ ➔</a>
-<a href="ഖവാലി (G).html" class="btn primary">ഖവാലി (G) ➔</a>
-<a href="പ്രസംഗം-ഉറുദു.html" class="btn primary">പ്രസംഗം ഉറുദു ➔</a>
-<a href="ഖുർആൻ-പ്രഭാഷണം.html" class="btn primary">ഖുർആൻ പ്രഭാഷണം ➔</a>
-<a href="സീറാ-പാരായണം-G.html" class="btn primary">സീറാ പാരായണം (G) ➔</a>
-<a href="ക്യാമ്പസ്-മെലഡി-G.html" class="btn primary">ക്യാമ്പസ് മെലഡി (G) ➔</a>
-<a href="ഇന്റർനാഷ്‌നൾ-തദ്രീസ്.html" class="btn primary">ഇന്റർനാഷ്‌നൾ തദ്രീസ് ➔</a>
-<a href="പോഡ്‌കാസ്റ്റ്-മലയാളം-G.html" class="btn primary">പോഡ്‌കാസ്റ്റ് - മലയാളം (G) ➔</a>
-<a href="WALK-AND-TALK-ഇംഗ്ലീഷ്.html" class="btn primary">WALK AND TALK - ഇംഗ്ലീഷ് ➔</a>
-<a href="നോളേജ്-ഒളിമ്പ്യാട്.html" class="btn primary">നോളേജ് ഒളിമ്പ്യാട് ➔</a>
-<a href="മാസ്റ്റർ-ട്വീറ്റ്.html" class="btn primary">മാസ്റ്റർ ട്വീറ്റ് ➔</a>
-<a href="ന്യൂസ്-കാസ്റ്റിഗ്.html" class="btn primary">ന്യൂസ് കാസ്റ്റിഗ് ➔</a>
-<a href="മക്തബ-ജീനിയസ്.html" class="btn primary">മക്തബ ജീനിയസ് ➔</a>
-<a href="തഹ്-രീർ.html" class="btn primary">തഹ് രീർ ➔</a>
-<a href="പ്രബന്ധം-മലയാളം.html" class="btn primary">പ്രബന്ധം (മലയാളം) ➔</a>
-<a href="ട്രാൻസ്ലേഷൻ-ഇംഗ്ലീഷ്.html" class="btn primary">ട്രാൻസ്ലേഷൻ (ഇംഗ്ലീഷ്) ➔</a>
-<a href="ഫോട്ടോഗ്രഫി.html" class="btn primary">ഫോട്ടോഗ്രഫി ➔</a>
-<a href="ഇ-പോസ്റ്റർ-മേക്കിങ്.html" class="btn primary">ഇ പോസ്റ്റർ മേക്കിങ് ➔</a>
-<a href="ബുക്ക്-റിവ്യൂ.html" class="btn primary">ബുക്ക് റിവ്യൂ ➔</a>
-<a href="ഹൈക്കു.html" class="btn primary">ഹൈക്കു ➔</a>
-<a href="മസ്അല-സംഗ്രഹം.html" class="btn primary">മസ്അല സംഗ്രഹം ➔</a>
-<a href="അഹ്ജിയതുൽ-അൽഫിയ.html" class="btn primary">അഹ്ജിയതുൽ അൽഫിയ ➔</a>
-<a href="സ്പോട്ട്-മാഗസിൻ-G.html" class="btn primary">സ്പോട്ട് മാഗസിൻ (G) ➔</a>
-<a href="വീഡിയോ-ട്രാൻസ്ലേഷൻ.html" class="btn primary">വീഡിയോ ട്രാൻസ്ലേഷൻ ➔</a>
-<a href="മെന്റൽ-എബിലിറ്റി-ടെസ്റ്റ്.html" class="btn primary">മെന്റൽ എബിലിറ്റി ടെസ്റ്റ് ➔</a>
-<a href="AI-കവിതാ-രചന.html" class="btn primary">AI കവിതാ രചന ➔</a>
-<a href="കൊളാഷ്-G.html" class="btn primary">കൊളാഷ് (G) ➔</a>
-<a href="സോഷ്യൽ-ട്വീറ്റ്.html" class="btn primary">സോഷ്യൽ ട്വീറ്റ് ➔</a>
-
-               
     </div>
-
-    <div class="cta-group">
-        <a href="index.html" class="btn secondary">← Back Home</a>
-    </div>
-</main>
-
-    </div>
+    
+    <script>
+        function goToPage(selectElement) {
+            const url = selectElement.value;
+            if (url) {
+                // Navigate to the selected URL
+                window.location.href = url;
+            }
+        }
+    </script>
 </body>
-</html> 
+</html>
