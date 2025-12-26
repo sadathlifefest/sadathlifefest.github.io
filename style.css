@@ -101,20 +101,7 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.btn.secondary {
-    /* Glassmorphism look for the Back button */
-    background: rgba(255, 255, 255, 0.2); 
-    border: 8px solid rgba(25, 255, 150, 0.1); /* Green effect */
-    border-radius: 60px;
-    
-    /* Layout settings for cta-group elements (inherited from cta-group, but repeated here) */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    margin-top: 20px;
-}
+/* The .btn.secondary rule has been removed as requested. */
 
 .btn:active {
     background: rgba(255, 255, 255, 0.3);
