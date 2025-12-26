@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Michroma, Michroma, Michroma, Michroma;
+}
+
+body {
+    /* Links to the image file in your repo */
+    background-image: url('bgblur.jpg');
+
+    /* Makes sure the image covers the entire screen */
+    background-size: cover;
+
+    /* Keeps the image centered */
+    background-position: center;
+
+    /* Prevents the image from repeating if the page is long */
+    background-repeat: no-repeat;
+
+    /* Keeps the background fixed so it doesn't scroll with the content */
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center; /* Corrected spelling */
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif; /* Applied Orbitron */
+    padding: 15px 0;
+    letter-spacing: 4px; /* Adds to the tech/fancy look */
+    text-transform: uppercase; /* Tech fonts look best in all caps */
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-badge {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 7px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 70px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #e0eadd;
+    margin-bottom: 50px;
+}
+
+/* This ensures the group itself is centered and holds the buttons correctly */
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the buttons horizontally */
+    gap: 14px;
+    width: 100%; /* Take full width to allow internal centering */
+    margin-top: 20px;
+}
+
+/* This makes both buttons the exact same size */
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; /* Adjust this % to match the width you want */
+    max-width: 320px; /* Prevents them from getting too wide on tablets */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+
+
+.btn.primary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn.secondary {
+        background: rgba(255, 255, 255, 0.2); /* Frosted glass look */
+    border: 8px solid rgba(25, 255, 150, 0.1);
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the buttons horizontally */
+    gap: 14px;
+    width: 100%; /* Take full width to allow internal centering */
+    margin-top: 20px;
+}
+
+.btn:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Bottom Navigation Bar Styles */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Creates a frosted glass effect */
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 25px; /* Extra space for modern phone home bars */
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-item span {
+    font-size: 1.2rem;
+}
+
+.nav-item p {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+/* Adjust the main container so content doesn't get hidden behind the nav */
+.container {
+    padding-bottom: 100px; 
+}
+
+/* Add this to style.css */
+.nav-item.active {
+    opacity: 1;
+    border-bottom: 2px solid white;
+}
+
+.nav-item {
+    opacity: 0.6; /* Makes non-active icons look slightly faded */
+    transition: 0.3s;
+}
+
+/* Add this to the bottom of style.css */
+.nav-item {
+    opacity: 0.5; /* Makes inactive buttons look faded */
+}
+
+.nav-item.active {
+    opacity: 1; /* Makes the current page button bright */
+    font-weight: bold;
+}
+
+/* Container for the list */
+/* This ensures the group itself is centered and holds the buttons correctly */
+.program.list {
+     display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the buttons horizontally */
+    gap: 14px;
+    width: 100%; /* Take full width to allow internal centering */
+    margin-top: 20px;
+    
+}
+
+/* To ensure the text and arrow are side-by-side and centered */
+.program-list span::after {
+    content: " ➔"; /* Adds the arrow automatically */
+    margin-left: 10px;
+}
+
+.program-list:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Individual program card */
+.program-card {
+    background: rgba(255, 255, 255, 0.5); /* Frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+}
+.program-card1 {
+    background: rgba(13, 43, 28, 0.8); /* Frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; /* Adjust this % to match the width you want */
+    max-width: 320px; /* Prevents them from getting too wide on tablets */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+.program-card2 {
+    background: rgba(77, 10, 29, 0.8); /* Frosted glass look */
+    border: 1px solid rgba(24, 61, 61, 1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; /* Adjust this % to match the width you want */
+    max-width: 320px; /* Prevents them from getting too wide on tablets */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+.program-card3 {
+    background: rgba(0, 35, 68, 0.8); /* Frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; /* Adjust this % to match the width you want */
+    max-width: 320px; /* Prevents them from getting too wide on tablets */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+
+.time {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #e0eadd;
+    min-width: 75px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 10px;
+}
+
+.details h3 {
+    font-size: 2.0rem;
+    margin-bottom: 10px;
+}
+
+.details p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+
+/* Styling for the Crew Page List */
+.crew-main {
+    justify-content: flex-start; /* Aligns content to top for scrolling */
+    padding-top: 20px;
+}
+
+.crew-content {
+    text-align: left;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+.crew-content section {
+    margin-bottom: 25px;
+}
+
+.role {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 1rem;
+    color: #e0eadd;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.name strong {
+    color: #ffffff;
+}
+
+.glass-green {
+    background: rgba(255, 255, 255, 0.2); /* Frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; /* Adjust this % to match the width you want */
+    max-width: 320px; /* Prevents them from getting too wide on tablets */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+
+.glass-green-head {
+    background: rgba(255, 255, 255, 0.9); /* Frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    
+    width: 85%; /* Adjust this % to match the width you want */
+    max-width: 320px; /* Prevents them from getting too wide on tablets */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+
+.instagram {
+    background: radial-gradient(
+    circle at 30% 107%, 
+    rgba(255, 220, 128, 0.5) 0%,   /* Yellow */
+    rgba(255, 220, 128, 0.5) 5%,   /* Yellow stretch */
+    rgba(253, 29, 29, 0.5) 45%,    /* Red-Orange */
+    rgba(193, 53, 132, 0.5) 60%,   /* Dark Pink */
+    rgba(64, 93, 230, 0.5) 90%     /* Royal Blue */
+  );
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.youtube {
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0.5) 0%, rgba(204, 0, 0, 0.5) 100%);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.facebook {
+    background: rgba(24, 119, 242, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
